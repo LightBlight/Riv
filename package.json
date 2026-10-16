@@ -1,0 +1,22 @@
+{
+  "name": "riv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LightBlight/Riv.git"
+  },
+  "keywords": [],
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/LightBlight/Riv/issues"
+  },
+  "homepage": "https://github.com/LightBlight/Riv#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
