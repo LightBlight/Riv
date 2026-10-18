@@ -1,15 +1,14 @@
 import type { ClientEvent } from "../types.js";
+import handle from "../commands/commandHandler.js";
 const prefix: string = 'riv ';
 
 const messageCreate: ClientEvent<'messageCreate'> = {
     once: false,
     name: 'messageCreate',
-    execute(message) {
+    async execute(message): Promise<void> {
         if (message.author.bot) return;
 
-        if (message.content.startsWith(prefix)) {
-            console.log('message starts with riv prefix!');
-        }
+        if (message.content.startsWith(prefix)) await handle(message);
     }
 }
 
