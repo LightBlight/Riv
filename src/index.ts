@@ -1,10 +1,7 @@
-import path from 'node:path';
 import fs from 'node:fs';
 import dotenv from 'dotenv';
 import { Client, GatewayIntentBits, type ClientEvents } from 'discord.js';
-import type { ClientEvent } from './types.js';
-
-const _dirname: string = path.join(process.cwd(), 'dist');
+import { type ClientEvent, _dirname } from './types.js';
 
 dotenv.config();
 
