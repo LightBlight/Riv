@@ -1,4 +1,4 @@
-import type { ClientEvent } from "../types.js";
+import type { ClientEvent } from "../util/types.js";
 import handle from "../commands/commandHandler.js";
 const prefix: string = 'riv ';
 

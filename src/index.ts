@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import dotenv from 'dotenv';
 import { Client, GatewayIntentBits, type ClientEvents } from 'discord.js';
-import { type ClientEvent, _dirname } from './types.js';
+import { type ClientEvent, _dirname } from './util/types.js';
 
 dotenv.config();
 
@@ -24,16 +24,14 @@ for (const file of eventFiles) {
     console.log(`importing ${file} from ${_dirname}/events/${file}`);
 
     if (eventModule.once) {
-        console.log('Event module is once');
         client.once(eventModule.name, (...args) => { eventModule.execute(...args); });
     }
     else {
-        console.log('Event module is not once');
         client.on(eventModule.name, (...args) => { eventModule.execute(...args); });
     }
 }
 
 if (token) {
     client.login(token);
-    console.log(`Event files -> ${eventFiles}`);
+    console.log(`Event files -> ${eventFiles.join('; ')}`);
 }

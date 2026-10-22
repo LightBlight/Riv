@@ -1,5 +1,5 @@
 import type { Message } from "discord.js";
-import { _dirname } from "../types.js";
+import { _dirname } from "../util/types.js";
 // message param contains the entire message. We should split it.
 export default async function handle(message: Message): Promise<void> {
     const messageContent: string = message.content;
